@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOS</title>
+
+    <link rel="stylesheet" href="./Styles/style.css" />
+    <link rel="stylesheet" href="./Styles/measureStyle.css" />
+    <link rel="stylesheet" href="./login-signup/login-signup.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+          crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+            crossorigin=""></script>
+
+    <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+
+
+    <img class="logo" src="./Styles/assets/logo.png" alt="Logo" align="right">
+
+    <section class="p-menu1">
+        <nav id="navbar" class="navigation" role="navigation">
+            <input id="toggle1" type="checkbox" />
+            <label class="hamburger1" for="toggle1">
+                <div class="top"></div>
+                <div class="meat"></div>
+                <div class="bottom"></div>
+            </label>
+
+            <nav class="menu1">
+                <!-- <a class="link1" onclick=login_SignupForm()>Login/Signup</a> -->
+                <a class="link1" onclick=fullScreenView()>View in Full Screen</a>
+                <a class="link1" onclick=logout()>Log Out</a>
+
+            </nav>
+        </nav>
+
+    </section>
+    <style>
+        body {
+            padding: 25px;
+            background-color: #02173F;
+            color: white;
+            font-size: 25px;
+            font-family:sans-serif;
+        }
+
+
+.clock {
+
+    color: #17D4FE;
+    font-size: 30px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    letter-spacing: 2px;
+   
+
+
+}
+    </style>
+</head>
+<body>
+    <div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+    <center>
+        <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+            <script src="https://www.govmap.gov.il/govmap/api/govmap.api.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    govmap.createMap('map',
+                        {
+                            token: '5a4b8472-b95b-4687-8179-0ccb621c7990',
+                            layers: ["FIRE_STATIONS", "MADA_STATIONS", "POLICE_Yehida_Location"],
+                            showXY: true,
+                            identifyOnClick: true,
+                            isEmbeddedToggle: false,
+                            background: 3,
+                            layersMode: 1,
+                            zoomButtons: false
+                        });
+                });
+                function logout() {
+                    //logout
+                    window.location.href = "./login.html";
+                }
+                
+            </script>
+        </head>
+        <body>
+            <div id="map" style="width:800px;height:800px"><iframe id="ifrMap" src="https://www.govmap.gov.il//map.html?MapMode=1&amp;showNavBtn=0&amp;showBackBtn=0&amp;api_token=5a4b8472-b95b-4687-8179-0ccb621c7990&amp;parentHost=&amp;laym=FIRE_STATIONS,MADA_STATIONS,POLICE_Yehida_Location&amp;xy=1&amp;zb=0&amp;b=3&amp;in=1&amp;et=0&amp;lm=1" style="width: 100%; height: 100%; border: none;"></iframe></div>
+        </body>
+    </html>
+</center>
+<p>&copy; 2022 GIS - HIT</p>
+</body>
+ 
+
+</html>
+<script src="./login-signup/uuidv4.js"></script>
+<script src="./login-signup/login-signup.js"></script>
+<script src="./login-signup/userData.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="./lib/leaflet.ajax.min.js"></script>
+<script src="./lib/leaflet.browser.print.min.js"></script>
+<script src="./lib/leaflet-measure.js"></script>
+<script src="mapbasefuncs.js"></script>
+<script src="mapManipulations.js"></script>
+<script src="clock.js"></script>
+
